@@ -63,14 +63,14 @@ def check_legislative_district(lat, lng, districts_geojson):
 # path2folder = r"./data/" # fill in the path to your folder here.
 # assert len(path2folder) > 0
 
-mhvillage_df = pd.read_csv(Path(__file__).parent / "MHVillageDec7_Legislative1.csv")
+mhvillage_df = pd.read_csv(Path(__file__).parent / "dataMI/MHVillageDec7_Legislative1.csv")
 mhvillage_df['Sites'] = pd.to_numeric(mhvillage_df['Sites'], downcast='integer')
-lara_df = pd.read_csv(Path(__file__).parent / "LARA_with_coord_and_legislativedistrict1.csv")
+lara_df = pd.read_csv(Path(__file__).parent / "dataMI/LARA_with_coord_and_legislativedistrict1.csv")
 lara_df['County'] = lara_df['County'].str.title()
 
-mhvillage_basic = pd.read_csv(Path(__file__).parent / "mhvillage_base.csv")
+mhvillage_basic = pd.read_csv(Path(__file__).parent / "dataMI/mhvillage_base.csv")
 mhvillage_basic['Sites'] = pd.to_numeric(mhvillage_basic['Sites'], downcast='integer')
-lara_basic = pd.read_csv(Path(__file__).parent / "lara_base.csv")
+lara_basic = pd.read_csv(Path(__file__).parent / "dataMI/lara_base.csv")
 lara_basic['County'] = lara_basic['County'].str.title()
 
 
@@ -278,6 +278,11 @@ layernames = ["Marker MHVillage",
     "Circle LARA (location only)",
     "Legislative districts (Michigan State Senate)",
     "Legislative districts (Michigan State House of Representatives)"]
+
+
+
+
+
 
 app_ui = ui.page_fluid(
     ui.HTML("""

@@ -1,6 +1,7 @@
 ## this code takes the addresses from MH village
 ## and uses geocode and the google API to generate clean addresses
 ## and GPS coordinates respectively
+
 import copy
 #import re
 import pandas as pd
@@ -120,3 +121,7 @@ mhvillage_df_copy['longitude'] = mhvillage_df_copy.apply(lambda x: x['lat_long']
 mhvillage_df_copy.drop(columns = ['lat_long'], inplace = True)
 
 mhvillage_df_copy.to_csv('dataIL/LATLONG_MHVillage_IL_Parks.csv')
+
+
+
+
